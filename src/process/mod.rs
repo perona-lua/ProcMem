@@ -204,14 +204,8 @@ impl Process {
         .expect("");
 
         if output.status.success() {
-            println!("Process with PID {} was terminated", &self.process_id);
             true
         } else {
-            println!(
-                "Error killing process with PID {}: {}",
-                &self.process_id,
-                String::from_utf8_lossy(&output.stderr)
-            );
             false
         }
     }
