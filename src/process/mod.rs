@@ -236,7 +236,6 @@ impl Process {
                 std::mem::size_of::<T>(), 
                 std::ptr::null_mut::<SIZE_T>()
             ) == FALSE {
-                println!("ReadProcessMemory failed. Error: {:?}", std::io::Error::last_os_error());
                 return Err(ProcMemError::ReadMemoryError);
             } else {Ok(out)};
         } 
